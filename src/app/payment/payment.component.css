@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height:800px;
+    padding-top:90px;
+    padding-left: 1055px;
+  
+  }
+  

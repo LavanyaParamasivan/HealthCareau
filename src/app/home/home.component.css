@@ -1,0 +1,230 @@
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero {
+    background-image:url("/assets/Images/frontbanner.png");
+    background-repeat: no-repeat;
+    height: 300px;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+  
+  .promoted {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+    border-top: 2px solid #888;
+    border-bottom: 2px solid #888;
+    padding: 10px 150px 10px 150px;
+  }
+  
+  .promoted img {
+    width: 250px;
+    height: 220px;
+  }
+  
+  .promo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 60px 0 40px 0;
+  }
+  
+  .promo-main-text {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .promo-sub-text {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .healthchecks {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 400px 25px 400px;
+    padding: 60px 0;
+  }
+  
+  .part {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .part img {
+    width: 180px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 1px;
+    /* background-color: #888; */
+  }
+  
+  .white-paper {
+    display: flex;
+    height: 50%;
+    margin: 0 25px;
+  }
+  
+  .white-paper img {
+    width: 57%;
+    height:30%;
+    border:1px solid;
+    padding-right:294px;
+    margin-left:82px;
+  }
+  
+  .white-paper .text {
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    background-color: #333;
+    text-align: center;
+    justify-content: space-between;
+ 
+  }
+  
+  .white-paper .header-text {
+    margin-top: 50px;
+    font-size: 30px;
+  }
+  
+  .white-paper .sub-text {
+    font-size: 20px;
+    color: #5cadd2;
+    margin-top: 10px;
+    padding: 0 15%;
+  }
+  
+  .white-paper .sub-text p {
+    margin: 0;
+  }
+  
+  .white-paper .large-text {
+    border-top: 2px solid #666;
+    border-bottom: 2px solid #666;
+    margin-top: -50px;
+    padding: 20px 0;
+    font-size: 35px;
+    color: #fff;
+  }
+  
+  .white-paper .learn-more {
+    background-color: #d25ca1;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+  }
+
+  footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #d25ca1;
+    color: #fff;
+    padding: 60px 0px;
+    text-align: center;
+    align-items: center;
+    margin: -3px -8px 0 -8px;
+    padding: 0 8px 5px 8px;
+    height: 12%;
+    width: 100%;
+    position: relative;
+    margin-top: 100px;
+ 
+  }
+  footer ul{
+    display:flex;
+    margin-bottom:25px;
+    font-size: 16px;
+
+  }
+  footer ul li{
+    margin:0 8px;
+
+  }
+  footer ul li:first-child{
+    margin-left:0;
+    
+  }
+  footer ul li:last-child{
+    margin-right:0;
+    
+  }
+  footer  a{
+    color:#fff
+  }
+  @media(max-width: 700px){
+    footer{
+      padding: 80px 15px;
+    }
+  }
+
+  .promo-welcome {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+    text-align: justify;
+    padding: 10px 850px 10px 850px;
+    font-weight: 300px;
+   
+  }
+  .welcometxt{
+    padding-top:60px;
+    text-align: center;
+    font-size: 44px;
+    font-weight: 400px;
+    margin: 0px 100px 25px 100px;
+  }
+  
+  .example-card {
+    max-width: 400px;
+    background-color: lavenderblush;
+    color: #333;
+   border-radius: 10px;
+   justify-content: space-between;
+   padding: 0 50px 10px;
+
+   display: flex;
+   flex-direction: column;
+   font-size: 15px;
+   height: 40vh;
+
+   
+  }
+
+  .example-card:nth-of-type(1n){
+    margin-left: 10px;
+    }
+  .mat-card-content p{
+    padding: 5px 5px 5px 5px;
+  }
+
+  button{
+   background-color: #d25ca1  !important;
+   color: #fff !important;
+  }
+
+  .buttonn {
+   
+    background-color: #d25ca1 !important;
+    color: #fff !important;
+    width:15%;
+    margin-left:1090px;
+    border-radius: 20px;
+    font-family: 'PT Sans';
+    font-size: 24px;
+  }
+
+  .footerul{
+    list-style-type: none !important;
+  }
+  

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="filters">
+      <a [routerLink]="['/catalog','']"  routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true }"   class="button" >All</a>
+      <a routerLink="/catalog/Cancer Screening" routerLinkActive="active" class="button" >Cancer Screening</a>
+      <a routerLink="/catalog/ECG screen Test" routerLinkActive="active" class="button" >ECG Test</a>
+      <a routerLink="/catalog/Eye Test" routerLinkActive="active" class="button" >Eye Test</a>
+      <a routerLink="/catalog/Body Check Up"  routerLinkActive="active" class="button" >Health Checks</a>
+      <a routerLink="/catalog/Hearing Health Test" routerLinkActive="active" class="button" >Hearing Test</a>
+     
+   
+    </div> 
+  
+    <ul class="products">
+
+      <li class="product-item" *ngFor="let healthDetails of getFilteredHealth() | orderBy: 'name'">
+    
+       <app-healthyliving-details [healthDetails]="healthDetails" (buy)="addToBook(healthDetails)"></app-healthyliving-details>
+      </li>
+    </ul>
+
+  </div>
