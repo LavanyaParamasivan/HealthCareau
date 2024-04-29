@@ -1,0 +1,59 @@
+<div class="content">
+  
+  <form [formGroup]="profileForm" (ngSubmit)="saveContact()">
+    <div class="registertxt">REGISTER</div>
+    <section>
+      
+      <div>
+        <input formControlName="email"  [class.error]="profileForm.controls.email.invalid &&  profileForm.controls.email.touched" placeholder="Email" autofocus />
+        <em *ngIf="profileForm.controls.email.invalid && profileForm.controls.email.touched">Please enter Email</em>
+        <input formControlName="name" placeholder="Name" />
+        <input formControlName="password" placeholder="Password" type="password"/>
+        <!-- <input placeholder="Favorites Ranking" /> -->
+      </div>
+    </section>
+    <section>
+     
+      <div  formArrayName="phones">
+        <div  *ngFor="let phone of this.profileForm.controls.phones.controls; let i = index"    [formGroupName]="i" class="flex-column">
+        <div class="flex-group" >
+          <input placeholder="Phone" formControlName="phoneNumber"/>
+          <img src="/assets/Images/plus-grey-blue.png" class="add" (click)="addPhone()"/>
+        </div>
+        <em *ngIf="phone.controls.phoneNumber.invalid">Preferred Phone number is required</em>
+        <div class="radio" >
+       <span *ngFor=" let phoneType of phoneTypes">
+        <input type="radio" formControlName="phoneType" [value]="phoneType.value"> {{phoneType.title}}
+  
+       </span>   
+        </div>
+        <span><input type="checkbox" formControlName="preferred" class="pref"/>Preferred</span>
+      </div>
+      </div>
+    </section>
+    <section>
+      <!-- [class.error]="profileForm.controls.address.invalid && profileForm.controls.address.touched" -->
+      <div>
+        <div class="address" formGroupName="address" [class.error]="profileForm.controls.address.invalid && profileForm.controls.address.touched" >
+          <div class="flex-group" >
+            <input placeholder="Address" formControlName="streetAddress"/>
+         
+          </div>
+          <input placeholder="City"  formControlName="city"/>
+          <input placeholder="State/Region" formControlName="state"/>
+          <input placeholder="Zip/Postal Code" formControlName="postalCode" />
+        
+        
+        </div>
+        <em *ngIf="profileForm.controls.address.invalid && profileForm.controls.address.touched">Incomplete Address</em>
+      </div>
+    </section>
+
+    <div class="buttons">
+      <button class="button cta" (click)="cancel()">Cancel</button>
+      <button class="button cta" type="submit" (click)="saveContact()" [disabled]="profileForm.invalid">Save</button>
+    </div>
+
+  </form>
+
+</div>

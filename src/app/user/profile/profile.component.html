@@ -1,0 +1,59 @@
+
+
+      <img src="/assets/Images/person-11.png" class="image" />
+
+
+    <!-- <h2>
+   Profile
+    </h2>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+      </thead>
+      <tbody>
+        <tr *ngIf="favoriteContacts.length === 0">
+          <td class="center" colspan="3">You have no favorite contacts</td>
+        </tr>
+        <ng-container *ngIf="favoriteContacts.length > 0">
+          <tr *ngFor="let contact of favoriteContacts" [routerLink]="['/contacts/edit', contact.id]">
+            <td>{{contact.firstName}} {{contact.lastName}}</td>
+            <td><span *ngIf="contact.phones[0]">{{contact.phones[0].phoneNumber}}</span></td>
+            <td *ngIf="contact.address">
+              {{contact.address.streetAddress}}, {{contact.address.city}},
+              {{contact.address.state}},
+              {{contact.address.postalCode}}
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table> -->
+    <div class="content">
+    <h2 class="header">
+      Profile
+    </h2>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+      </thead>
+      <tbody>
+        <tr *ngIf=" contacts.length===0">
+          <td class="center" colspan="3">You have no contacts</td>
+        </tr>
+        <ng-container *ngIf="contacts.length > 0">
+          <tr *ngFor="let contact of contacts" [routerLink]="['/contacts/edit', contact.id]">
+            <td>{{contact.email}} {{contact.name}}</td>
+            <td><span *ngIf="contact.phones[0]">{{contact.phones[0].phoneNumber}}</span></td>
+            <td *ngIf="contact.address">
+              {{contact.address.streetAddress}}, {{contact.address.city}},
+              {{contact.address.state}},
+              {{contact.address.postalCode}}
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>

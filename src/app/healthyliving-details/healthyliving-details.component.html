@@ -1,0 +1,27 @@
+<div class="product">
+    <div class="product-details">
+      <!-- <img src="{{'/assets/Images/' + healthDetails.imagename}}" [alt]="healthDetails.description" />-->
+  <img [src]="getImageUrl(healthDetails)" [alt]="healthDetails.description" /> 
+      <div class="product-info">
+        <div class="name">{{healthDetails.name}}</div>
+        <div class="category"></div>
+        <div class="description">Health Check Available: {{healthDetails.description}}</div>
+      </div>
+    </div>
+    <div class="price">
+      <div [ngStyle]="{'color': healthDetails.discount > 0 ? 'black':''}" [ngClass]="{strikethrough: healthDetails.discount >0}">{{healthDetails.cost | currency :'AUD'}}</div>
+      <div *ngIf="healthDetails.discount > 0" class="discount"> {{(healthDetails.cost * (1- healthDetails.discount))| currency :'AUD'}}</div>
+
+      <div>
+
+      <button class="button cta  bookbtn" (click)="buybuttonclick(healthDetails)">Book</button>
+      </div>
+ 
+    
+    </div>
+   
+ 
+  
+   
+  </div>
+ 

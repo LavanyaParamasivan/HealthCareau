@@ -1,0 +1,37 @@
+<div class="container">
+ 
+ 
+    <div class="left">
+      <img class="logo"  routerLink="/home" src="/assets/Images/logo.png" alt="Logo" />
+      <a  routerLink="/home" routerLinkActive="active">Home</a>
+      <a [routerLink]="['/catalog','']" routerLinkActive="active">Centres</a>
+      <!-- <div class="cart">
+        <a  routerLink="/cart" routerLinkActive="active">Cart</a>
+      </div> -->
+    </div>
+
+
+    <div class="right" *ngIf="!this.useralll">
+      <a  routerLink="/cart" routerLinkActive="active">    <sup *ngIf="this.bookservice.cartcount>0" class="cart">&nbsp;&nbsp;{{this.bookservice.cartcount}}</sup><mat-icon >shopping_cart</mat-icon>
+    </a>
+
+      <a routerLink="users/sign-in" routerLinkActive="active">Sign In</a>
+
+      <!-- <a routerLink="users/register" routerLinkActive="active">Register</a> -->
+      <!-- <a routerLink="users/profile" routerLinkActive="active">Profile</a> -->
+    </div>
+    <div class="right" *ngIf="this.useralll">
+      <a  routerLink="/cart" routerLinkActive="active">  <sup *ngIf="this.bookservice.cartcount>0" class="cart">&nbsp;&nbsp;{{this.bookservice.cartcount}}</sup><mat-icon>shopping_cart</mat-icon></a>
+      <div>
+   <span  [ngStyle]="{'background-color': '#d25ca1'}" class="circle" (click)="toggleSignOutMenu()">{{this.name.charAt(0) + this.name.charAt(1) | uppercase }}</span>
+        <div class="sign-out" *ngIf="showsignout" >
+          <button  (click)="signout()">
+     Sign-Out
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    
+  </div>

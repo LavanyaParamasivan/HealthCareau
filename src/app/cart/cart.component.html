@@ -1,0 +1,77 @@
+<div class="container">
+    <h1 class="header">Your Cart</h1>
+  
+    <div class="empty-cart" *ngIf="cartItems.length === 0">
+      You have no items in your cart
+    </div>
+    <ul class="cart" *ngIf="cartItems.length > 0">
+      <li class="cart-item" *ngFor="let product of cartItems">
+        <div class="product">
+          <div class="product-details">
+            <img [src]="getImageUrl(product)" [alt]="product.description" />
+            <div class="product-info">
+              <div class="name">{{ product.name }}</div>
+              <div></div>
+              <div class="description">{{ product.description }}</div>
+      
+            </div>
+          </div>
+          <div class="price">
+            <div [ngClass]="{ strikethrough: product.discount > 0 }">
+              {{ product.cost | currency : "AUD" }}
+            </div>
+        
+            <div *ngIf="product.discount > 0" class="discount">
+              {{ product.cost * (1 - product.discount) | currency : "AUD" }}
+            </div>
+            <button (click)="removeFromCart(product)">Remove</button>
+          
+          </div>
+        </div>
+    
+      </li>
+    </ul>
+    <div class="total">Total: {{ cartTotal | currency }}</div>
+    <button *ngIf="cartItems.length > 0 &&  this.userlog" (click)="checkout(cartItems)" class="checkout">CheckOut</button>
+    <button *ngIf="cartItems.length > 0 &&  !this.userlog" (click)="openpopup()"class="checkoutguest">CheckOut As Guest   </button>
+    <span class="rout" (click)="signinrout()" *ngIf="cartItems.length > 0 &&  !this.userlog">Have an account ? 
+      <u>Sign-in</u></span>
+    <div class="over-lay" *ngIf="this.show">
+      <div class="" >
+        <form class="form" #myform="ngForm" (ngSubmit)="Signin(cartItems)">
+          <img class="logo" src="/assets/Images/logo.png" />
+          <div class="sign-in">SIGN IN AS GUEST</div>
+          <!-- <div class="sub-text">to save lives</div> -->
+          <input name="email" required  email  #email="ngModel" [(ngModel)]="credentials.email" placeholder="Email" type="text" />
+          <em class="error" *ngIf="email.errors?.['required'] && email.touched">
+            Email is required
+          </em>
+          <em class="error" *ngIf="email.errors?.['email'] && email.touched">
+           Must be a valid Email
+          </em>
+          <input name="name"  required #name="ngModel" [(ngModel)]="credentials.name" placeholder="Name" type="text" />
+          <input name="password"  required #password="ngModel" [(ngModel)]="credentials.password" placeholder="Password" type="password" />
+          <em class="error" *ngIf="password.invalid && password.touched">
+            Password is required
+          </em>
+          <div class="buttons">
+            <button type="submit" class="button cta btnsigin" [disabled]="myform.form.invalid">
+              Sign In
+            </button>
+            <button type="submit" class="button cta btnsigin" (click)="cancel()">
+            Cancel
+            </button>
+          </div>
+          <!-- <div class="signInError" *ngIf="signInError">
+            Sign-In failed.Please try again
+          </div> -->
+        </form>
+    </div>
+  
+    </div>
+  </div>
+
+ 
+
+
+
