@@ -1,14 +1,18 @@
 <div class="product">
-    <div class="product-details">
-      <!-- <img src="{{'/assets/Images/' + healthDetails.imagename}}" [alt]="healthDetails.description" />-->
+  <div class="row">
+
+
+    <div class="product-details col-md-3">
+
   <img [src]="getImageUrl(healthDetails)" [alt]="healthDetails.description" /> 
-      <div class="product-info">
+</div>
+      <div class="product-info col-md-6">
         <div class="name">{{healthDetails.name}}</div>
         <div class="category"></div>
         <div class="description">Health Check Available: {{healthDetails.description}}</div>
       </div>
-    </div>
-    <div class="price">
+   
+    <div class="price col-md-3">
       <div [ngStyle]="{'color': healthDetails.discount > 0 ? 'black':''}" [ngClass]="{strikethrough: healthDetails.discount >0}">{{healthDetails.cost | currency :'AUD'}}</div>
       <div *ngIf="healthDetails.discount > 0" class="discount"> {{(healthDetails.cost * (1- healthDetails.discount))| currency :'AUD'}}</div>
 
@@ -22,6 +26,6 @@
    
  
   
-   
+  </div>
   </div>
  

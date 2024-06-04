@@ -115,12 +115,12 @@ app.get("https://healthcaredata.onrender.com/healthDetailss", (req, res) => {
   res.send(healthDetailss);
 });
 
-app.post("https://healthcaredata.onrender.com/cart", (req, res) => {
+app.post("https://healthcaredata.onrender.com/cartdata", (req, res) => {
   cart = req.body;
   setTimeout(() => res.status(201).send(), 20);
 });
 
-app.get("https://healthcaredata.onrender.com/cart", (req, res) => res.send(cart));
+app.get("https://healthcaredata.onrender.com/cartdata", (req, res) => res.send(cart));
 
 app.post("/api/register", (req, res) =>
   setTimeout(() => {

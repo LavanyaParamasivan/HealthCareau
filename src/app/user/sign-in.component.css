@@ -1,75 +1,30 @@
-.container {
-    display: flex;
-    justify-content: space-around;
 
-  }
-  
-  .form {
-    display: flex;
-    padding: 30px 50px 50px 50px;
-    flex-direction: column;
-    margin-top: 270px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    background-color: lavenderblush;
+.card{
+  background-color: lavenderblush;
+  color: #000;
+}
+.field{
+font-size: 1rem;
+}
+.btnsigin{
+  background-color:#d25ca1  ;
+  color: #fff;
+}
+em.error {
+  padding: 2px 5px;
+  color: red;
+  font-style: normal;
+}
+input.error {
+  border: 1px solid #d25ca1;
+}
+.headertxt{
+  color: #d25ca1;
+}
+input::placeholder {
+  font-size: 1rem;
+}
+.container{
+  margin-bottom:80px;
+}
  
-  }
-  
-  .form input {
-    margin-top: 25px;
-border-radius: 10px;
-  }
-  
-  .logo {
-    width: 150px;
-    align-self: center;
-    margin-bottom: 15px;
-  }
-  
-  .sign-in {
-    font-size: 30px;
-    align-self: center;
-    color: #555;
-  }
-  
-  .sub-text {
-    font-size: 18px;
-    align-self: center;
-    margin-bottom: 15px;
-    color: #444;
-  }
-  
-  .form.buttons {
-    margin-top: 10px;
-    display: inline-flex;
-    justify-content: flex-end;
-    font-size: 16px;
-    margin-left:60px;
-  }
-  
-  input.error {
-    border: 1px solid #d25ca1;
-  }
-  
-  em.error {
-    padding: 2px 5px;
-    color: red;
-    font-style: normal;
-  }
-  
-  .signInError {
-    margin: 25px 0;
-    color: red;
-    font-size: 18px;
-    text-align: center;
-  }
-  .btnsigin{
-    /* margin-left:70px !important; */
-    margin-top: 25px !important;
-    width: 100%;
-  }
-  .btnregister{
-    margin-top: 20px !important;
-    width: 100%;
-  }
-  

@@ -1,13 +1,13 @@
-<div class="container">
+<!-- <div class="container">
  
  
     <div class="left">
       <img class="logo"  routerLink="/home" src="/assets/Images/logo.png" alt="Logo" />
       <a  routerLink="/home" routerLinkActive="active">Home</a>
       <a [routerLink]="['/catalog','']" routerLinkActive="active">Centres</a>
-      <!-- <div class="cart">
+      <div class="cart">
         <a  routerLink="/cart" routerLinkActive="active">Cart</a>
-      </div> -->
+      </div> 
     </div>
 
 
@@ -17,15 +17,15 @@
 
       <a routerLink="users/sign-in" routerLinkActive="active">Sign In</a>
 
-      <!-- <a routerLink="users/register" routerLinkActive="active">Register</a> -->
-      <!-- <a routerLink="users/profile" routerLinkActive="active">Profile</a> -->
+     <a routerLink="users/register" routerLinkActive="active">Register</a> 
+     <a routerLink="users/profile" routerLinkActive="active">Profile</a> 
     </div>
     <div class="right" *ngIf="this.useralll">
       <a  routerLink="/cart" routerLinkActive="active">  <sup *ngIf="this.bookservice.cartcount>0" class="cart">&nbsp;&nbsp;{{this.bookservice.cartcount}}</sup><mat-icon>shopping_cart</mat-icon></a>
       <div>
    <span  [ngStyle]="{'background-color': '#d25ca1'}" class="circle" (click)="toggleSignOutMenu()">{{this.name.charAt(0) + this.name.charAt(1) | uppercase }}</span>
         <div class="sign-out" *ngIf="showsignout" >
-          <button  (click)="signout()">
+          <button  (click)="signout()" class="signoutbtn">
      Sign-Out
           </button>
         </div>
@@ -34,4 +34,55 @@
     </div>
 
     
-  </div>
+  </div> -->
+
+  <header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-3">
+                <div class="logo">
+                    <img routerLink="/home" src="/assets/Images/logo.png" alt="Logo" class="logo" alt="">
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 col-9 text-end">
+                <div class="menu-icon" (click)="openMenu()">
+                    <i class="{{menu_icon}}"></i>
+                </div>
+                <div class="desktop_menu" [class.mobile_menu]="menuValue">
+                    <ul>
+                        <li (click)="closeMenu()">  <a  routerLink="/home" routerLinkActive="active">Home</a></li>
+                        <li (click)="closeMenu()"> <a [routerLink]="['/catalog','']" routerLinkActive="active">Centers</a></li>
+                        <li (click)="closeMenu()"> <a  routerLink="/cart" routerLinkActive="active">Cart</a></li>
+                       
+                        <li (click)="closeMenu()" *ngIf="!this.useralll"> <a routerLink="users/sign-in" routerLinkActive="active">Sign In</a></li>
+                      <li *ngIf="this.useralll">
+                        <div  *ngIf="this.useralll">
+                          <div>
+                            <span  [ngStyle]="{'background-color': '#5cadd2'}" class="circle" (click)="toggleSignOutMenu()">{{this.name.charAt(0) + this.name.charAt(1) | uppercase }}</span>
+                                 <div class="sign-out" *ngIf="showsignout" >
+                                   <button  (click)="signout()" class="signoutbtn">
+                              Sign-Out
+                                   </button>
+                                 </div>
+                         
+                               </div>
+                          </div>
+                          </li>
+                          <li  *ngIf="this.useralll" class="show-mobile">
+                            <div  *ngIf="this.useralll" class="show-mobile">
+                            <button  (click)="signout()" class="signoutbtn">
+                              Sign-Out
+                                   </button>
+                                   </div>
+                          </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+

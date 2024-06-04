@@ -6,11 +6,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+cardata: any;
   constructor(private router: Router,private route : ActivatedRoute){
 
   }
   ngOnInit(): void {
-    
-  }
 
+  }
 }

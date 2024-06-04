@@ -27,7 +27,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { SuccessComponent } from './success/success.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import {MatIconModule} from '@angular/material/icon';
-
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -57,6 +58,7 @@ import {MatIconModule} from '@angular/material/icon';
     MessageComponent,
     PaymentComponent,
     SuccessComponent,
+    FooterComponent,
   
 
 
@@ -75,6 +77,7 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule, 
     NgxPayPalModule,
     MatIconModule,
+    FlexLayoutModule,
 
     ToastrModule.forRoot({
       timeOut: 6000,

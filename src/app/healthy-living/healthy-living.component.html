@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="filters">
+    <div class="filters col-sm-12">
       <a [routerLink]="['/catalog','']"  routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true }"   class="button" >All</a>
       <a routerLink="/catalog/Cancer Screening" routerLinkActive="active" class="button" >Cancer Screening</a>
       <a routerLink="/catalog/ECG screen Test" routerLinkActive="active" class="button" >ECG Test</a>
@@ -9,13 +9,13 @@
      
    
     </div> 
-  
+    <div class="col-sm-12">
     <ul class="products">
 
       <li class="product-item" *ngFor="let healthDetails of getFilteredHealth() | orderBy: 'name'">
-    
+
        <app-healthyliving-details [healthDetails]="healthDetails" (buy)="addToBook(healthDetails)"></app-healthyliving-details>
       </li>
     </ul>
-
+</div>
   </div>

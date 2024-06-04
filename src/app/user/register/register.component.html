@@ -1,4 +1,4 @@
-<div class="content">
+<!-- <div class="content">
   
   <form [formGroup]="profileForm" (ngSubmit)="saveContact()">
     <div class="registertxt">REGISTER</div>
@@ -9,7 +9,7 @@
         <em *ngIf="profileForm.controls.email.invalid && profileForm.controls.email.touched">Please enter Email</em>
         <input formControlName="name" placeholder="Name" />
         <input formControlName="password" placeholder="Password" type="password"/>
-        <!-- <input placeholder="Favorites Ranking" /> -->
+     
       </div>
     </section>
     <section>
@@ -18,7 +18,7 @@
         <div  *ngFor="let phone of this.profileForm.controls.phones.controls; let i = index"    [formGroupName]="i" class="flex-column">
         <div class="flex-group" >
           <input placeholder="Phone" formControlName="phoneNumber"/>
-          <img src="/assets/Images/plus-grey-blue.png" class="add" (click)="addPhone()"/>
+
         </div>
         <em *ngIf="phone.controls.phoneNumber.invalid">Preferred Phone number is required</em>
         <div class="radio" >
@@ -27,12 +27,12 @@
   
        </span>   
         </div>
-        <span><input type="checkbox" formControlName="preferred" class="pref"/>Preferred</span>
+
       </div>
       </div>
     </section>
     <section>
-      <!-- [class.error]="profileForm.controls.address.invalid && profileForm.controls.address.touched" -->
+
       <div>
         <div class="address" formGroupName="address" [class.error]="profileForm.controls.address.invalid && profileForm.controls.address.touched" >
           <div class="flex-group" >
@@ -56,4 +56,84 @@
 
   </form>
 
+</div> -->
+
+
+ <div class="container"> 
+
+
+  <section >
+    <div class="container py-5 "  >
+      <form [formGroup]="profileForm" (ngSubmit)="saveContact()">
+      <div class="row d-flex justify-content-center align-items-center ">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card  " style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-5 mt-md-4 pb-5">
+  
+                <h2 class="fw-bold mb-4 text-uppercase headertxt">REGISTER</h2>
+            
+  
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <label class="form-label field " for="typeEmailX">Email</label>
+                  <input formControlName="email"  [class.error]="profileForm.controls.email.invalid &&  profileForm.controls.email.touched" placeholder="Enter Email" autofocus  class="form-control form-control-lg" />
+                  <em *ngIf="profileForm.controls.email.invalid && profileForm.controls.email.touched">Please enter Email</em>
+              
+                </div>
+                 <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <label class="form-label field" for="typeNameX">Name</label>
+                  <input  formControlName="name" placeholder="Enter Name" class="form-control form-control-lg" />
+               
+              
+                </div>
+           
+          <div data-mdb-input-init class="form-outline form-white mb-4 ">
+                  <label class="form-label field" for="typePasswordX">Password</label>
+                  <input formControlName="password" placeholder=" Enter Password" type="password" class="form-control form-control-lg" />
+                 
+                
+                </div>
+                      <div data-mdb-input-init class="form-outline form-white mb-4 ">
+                  <label class="form-label field" for="typePhoneX">Phone Number</label>
+                  <input  placeholder="Phone" formControlName="Enter phoneNumber" class="form-control form-control-lg" />
+                 
+                
+                </div>
+  
+             <div data-mdb-input-init class="form-outline form-white mb-4 "  formGroupName="address" [class.error]="profileForm.controls.address.invalid && profileForm.controls.address.touched">
+                  <label class="form-label field" for="typeAddressX">Address</label>
+                  <input placeholder="Enter Address" formControlName="streetAddress" class="form-control form-control-lg" />
+                </div> 
+                <div data-mdb-input-init class="form-outline form-white mb-4 ">
+                  <input placeholder="Enter City"  formControlName="city" class="form-control form-control-lg"/>
+                  </div>
+                  <div data-mdb-input-init class="form-outline form-white mb-4 ">
+                  <input placeholder="Enter State/Region" formControlName="state" class="form-control form-control-lg"/>
+                  </div>
+                  <div data-mdb-input-init class="form-outline form-white mb-4 ">
+                  <input placeholder="Enter Zip/Postal Code" formControlName="postalCode" class="form-control form-control-lg" />
+                </div>
+                  <em *ngIf="profileForm.controls.address.invalid && profileForm.controls.address.touched">Incomplete Address</em>
+                
+             
+  
+  
+        
+                <button  data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5 btnsigin" (click)="cancel()">Cancel</button>
+                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5 btnsigin"  type="submit" (click)="saveContact()"  [disabled]="profileForm.invalid" type="submit">Sign Up</button>
+  
+             
+  
+              </div>
+  
+            
+  
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+  </section>
 </div>

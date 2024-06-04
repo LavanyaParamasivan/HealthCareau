@@ -19,6 +19,7 @@ constructor(private bookSvc : BookService, private healthyliving : Healthyliving
 
 }
 ngOnInit(){
+
   this.healthyliving.getDetails().subscribe(prod=>{
     console.log(prod)
   this.healthDetailss= prod;
@@ -30,6 +31,7 @@ this.route.params.subscribe((param)=>{
 }
 addToBook(healthDetails: IhealthyDetails){
 // this.cart.push(healthDetails);
+this.bookSvc.remove(healthDetails);
 //  console.log(healthDetails.description  + '  has been booked')  
 this.bookSvc.add(healthDetails);
 this.router.navigate(['/cart']);

@@ -16,8 +16,9 @@ body {
   font-style: normal;
  font-size: 20px;
  color: #000;
+ height: 100vh;
 }
-   
+body, html { overflow-x:hidden; }
 
 
 :root {
@@ -178,73 +179,14 @@ h3{
   font-size: 19px !important;
 }
 
-/**/
-  /* button.primary {
-    position: relative;
-    background-color: var(--color-primary);
-    transition-duration: 0.4s;
-  }
-  
-  button.secondary {
-    background-color: var(--color-secondary);
-  }
-  
-  button:disabled {
-    background-color: var(--color-secondary);
-    color: var(--color-disabled-error);
-    cursor: not-allowed;
-  }
-  
-  button:not([disabled])::after {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 5px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all 0.5s;
-  }
-  
-  button:not([disabled]).image::after {
-    border-radius: 15px;
-  }
-  
-  button:not([disabled]):active::after {
-    position: absolute;
-    border-radius: 5px;
-    left: 0;
-    top: 0;
-    opacity: 1;
-    transition: 0s;
-  }
-  
-  button:not([disabled]).image:active::after {
-    border-radius: 15px;
-  }
-  
-  button:not([disabled]).primary::after {
-    box-shadow: 0 0 10px 20px var(--color-primary-light);
-  }
-  
-  button:not([disabled]).primary:active::after {
-    box-shadow: 0 0 0 0 var(--color-primary-light);
-  }
-  
-  button:not([disabled]).secondary::after {
-    box-shadow: 0 0 10px 20px var(--color-secondary-light);
-  
-  }
-  
-  button:not([disabled]).secondary:active::after {
-    box-shadow: 0 0 0 0 var(--color-secondary-light);
-  } */
 
-  /**/
   
   
-  
-html, body { height: 100%; }
+  html,body {
+    position:relative; 
+    margin:0;
+    padding:0;
+    overflow:auto; 
+}
+
 body { margin: 0; font-family: "PT Sans", "Helvetica Neue", sans-serif; }
